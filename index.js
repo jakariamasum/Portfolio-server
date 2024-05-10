@@ -107,7 +107,7 @@ async function run() {
       res.send(result)
     })
     app.get("/projects",async (req,res)=>{
-      const result = await projectsCollection.find().toArray()
+      const result = await projectsCollection.find().sort({ _id: -1 }).toArray();
       res.send(result)
     })
 
